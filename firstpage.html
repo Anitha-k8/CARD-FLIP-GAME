@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Memory card Game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url("https://t3.ftcdn.net/jpg/06/53/01/26/360_F_653012686_damKXIEkKFYgwiHfdCTiwgOiuon6dAP8.jpg");
+            background-size: cover;
+        }
+        .login-container {
+   border:3px solid rgb(247, 130, 21);
+    border-radius:0px 80px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 500px;
+    max-width: 400px;
+    text-align: center;
+    margin-top: 150px;
+    margin-left: 100px;
+    
+}   
+
+        h1 {
+            margin-bottom: 20px;
+            color: yellow;
+            font-weight: bold;
+            font-size: 50px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 20px;
+            background: none;
+            color:white;
+            font-weight: bold;
+        }
+        button {
+            width: 60%;
+            padding: 10px;
+            background-color:#b90270;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color:white;
+            font-weight: bold;
+        }
+       
+            
+            
+        
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="email" id="email" placeholder="E-Mail" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">SUBMIT</button>
+        </form>
+        <div class="footer">
+            &copy; 2024 Memory Card Game
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+    
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+    
+            // Save user info to local storage
+            localStorage.setItem('userName', name);
+            localStorage.setItem('userEmail', email);
+    
+            window.location.href = 'index.html'; // Redirect to the game page
+        });
+    </script>
+    
+
+   
+</body>
+</html>

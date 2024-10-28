@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height:300px;
+  flex-direction: column;
+  background: url("https://cliply.co/wp-content/uploads/2020/10/402010490_GOLD_CONFETTI_400px.gif");
+  background-size: cover;
+}
+.card .front-view img{
+  width: 40px;
+}
+
+.card .back-view img{
+  max-width: 80px;
+}
+h1{
+  font-size: 45px;
+ 
+  padding-bottom:5px;
+  color:darkorange;
+}
+.container{
+  margin-top: 30px;
+  height:350px;
+  width: 370px;
+  background: linear-gradient(to left, #eb6a6a, #b90270);
+  /* border-radius: 10px; */
+  padding: 25px;
+  box-shadow: 0 0 10px;
+  text-align: center;
+  border-radius: 35px 0;
+}
+.controls {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  
+}
+#start-button, #restart-button, #timer, #attempts, #score{
+  padding: 20px 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+#start-button{
+  border-radius: 8px;
+  background-color:rgb(255, 68, 0);
+  color:white;
+  font-weight: bold;
+  font-size: 20px;
+}
+#restart-button{
+  border-radius: 8px;
+  color:darkgreen;
+  font-weight: bold;
+  font-size: 20px;
+}
+#timer{
+  font-size: 25px;
+  color:navy;
+  font-weight: bold;
+  box-sizing: border-box;
+  background-color: yellow;
+  border-radius: 8px;
+}
+#attempts{
+  font-size: 25px;
+  color:darkred;
+  font-weight: bold;
+  box-sizing: border-box;
+  background-color:aqua;
+  border-radius: 8px;
+}
+#score{
+  font-size: 25px;
+  color:white;
+  font-weight: bold;
+  box-sizing: border-box;
+  background-color:darkred;
+  border-radius: 8px;
+}
+
+#levels{
+  padding:2px 40px;
+  margin-top: 10px;
+  background-color:darkmagenta;
+  color:white;
+  font-weight: bold;
+  width:155px;
+  height:70px;
+  border-radius: 15px;
+  font-size: 20px;
+}
+
+#start-button {
+  margin-right: 20px; 
+}
+#start-button, #restart-button,  #timer, #attempts, #score{
+  margin: 10px; 
+}
+.cards,
+.card,
+.view{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cards{
+  height: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.cards .card{
+  height: calc(100% / 4 - 10px);
+  width: calc(100% / 4 - 10px);
+  cursor: pointer;
+  
+  position: relative;
+  perspective: 800px;
+  transform-style: preserve-3d;
+}
+.cards .card .view{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.616);
+  border-radius: 7px;
+  position: absolute;
+  transition: transform .25s linear;
+  backface-visibility: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+.card .front-view span{
+  font-size: 40px;
+  color: #6563ff;
+}
+.card .back-view{
+  /* display: none; */
+
+  transform: rotateX(-180deg);
+}
+
+
+/*JS 3*/
+.card.flip .back-view{
+  transform: rotateX(0);
+}
+.card.flip .front-view{
+  transform: rotateX(180deg);
+}
+/*JS 7.2*/
+.card.shake{
+  animation: shake 0.35s ease-in-out;
+}
+@keyframes shake {
+  0%, 100%{
+      transform: translateX(0);
+  }
+  20%{
+      transform: translateX(-13px);
+  }
+  40%{
+      transform: translateX(13px);
+  }
+  60%{
+      transform: translateX(-8px);
+  }
+  80%{
+      transform: translateX(8px);
+  }
+}
+u{
+  color:orange;
+}
+.game-img{
+  padding-right: 700px;
+  margin-top: -370px;
+}
+.game-img2{
+  padding-left: 700px;
+  
+}
